@@ -1,0 +1,23 @@
+<html>
+    <script>
+        function CalculateSum(){
+            // const element = document.getElementById('finalSum');
+            // console.log(element);
+            // element.innerHTML = 'Hello howle';
+            const firstNum = document.getElementById("firstNumber").value - '0';
+            const secondNum = document.getElementById("secondNumber").value - '0';
+            // const Sum = firstNum + secondNum;
+            const sumOfTwo = fecth(`http://localhost:3003/sum?a=${firstNum}&b=${secondNum}`).sum;
+            document.getElementById("finalSum").innerHTML = "Sum is : "+ sumOfTwo;
+        }
+    </script>
+    <body>
+        <input id="firstNumber" type="text" placeholder="first number "> 
+        <BR>
+        <input id="secondNumber" type = "text" placeholder="second number"> 
+        <br>
+        <button onclick="CalculateSum()">claculate sum</button> 
+        <br>
+        <div id="finalSum"></div>
+    </body>
+</html>
